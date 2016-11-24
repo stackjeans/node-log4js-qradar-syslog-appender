@@ -325,8 +325,7 @@ function verifyOptions(options) {
         var key = option.split('_').pop();
 
         if (!options[key + "Path"] && !options[key + "Base64"] && !options.useUdpSyslog) {
-            util.log('QRadar node-log4js-syslog-appender: Either ' + key + 'Path or ' + key + 'Base64 are required options. It is settable with the ' + option + ' environment variable.');
-            valid = false; // array.forEach is blocking
+            util.log('QRadar node-log4js-syslog-appender: Neither ' + key + 'Path or ' + key + 'Base64 was provided. Server must support encrypted syslog TCP without mutual auth.');
         }
 
         // Deprecated warnings.
