@@ -10,6 +10,7 @@
   "author": "Herman Singh Badwal <ssjherman@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.1.4",
     "log4js": "^0.6.33",
     "tls": "0.0.1"
   },
