@@ -272,6 +272,7 @@ function configure(config) {
             vendor: process.env.log4js_syslog_appender_vendor || config.options && config.options.vendor || '',
             product: process.env.log4js_syslog_appender_product || config.options && config.options.product,
             product_version: process.env.log4js_syslog_appender_product_version || config.options && config.options.product_version || '',
+            rejectUnauthorized: process.env.log4js_syslog_appender_rejectUnauthorized || config.options && config.options.rejectUnauthorized,
             url: process.env.log4js_syslog_appender_url || config.options && config.options.url || process.env.url || os.hostname() || ''
         };
 
@@ -282,9 +283,7 @@ function configure(config) {
             }
         }
         
-        if (process.env.log4js_syslog_appender_rejectUnauthorized === false || 
-            process.env.log4js_syslog_appender_rejectUnauthorized === 'false' ||
-            options.rejectUnauthorized === false) {
+        if (options.rejectUnauthorized === 'false' || options.rejectUnauthorized === false) {
             options.rejectUnauthorized = false;
         }
         else {
